@@ -41,7 +41,6 @@ def line2tensor(line):
 def categ_from_out(out):
     top_n, top_i = out.topk(1)
     categ_i = top_i[0].item()
-    print(top_n)
     return all_categs[categ_i], categ_i
 
 def gen_rand_training_example():
@@ -51,3 +50,5 @@ def gen_rand_training_example():
     li_tensor = line2tensor(line)
     return categ, line, categ_tensor, li_tensor
 
+baye = line2tensor("bayw")
+print(baye.shape)
