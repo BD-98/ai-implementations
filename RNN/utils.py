@@ -5,7 +5,7 @@ import os
 import string 
 from random import choice 
 
-data_chars = string.ascii_letters + " .,:"
+data_chars = string.ascii_letters + " .,:'"
 path = "char-rnn-data/names/*.txt"
 categ_lines = {}
 all_categs = []
@@ -41,6 +41,7 @@ def line2tensor(line):
 def categ_from_out(out):
     top_n, top_i = out.topk(1)
     categ_i = top_i[0].item()
+    print(top_n)
     return all_categs[categ_i], categ_i
 
 def gen_rand_training_example():
