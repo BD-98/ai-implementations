@@ -3,4 +3,4 @@ datasets/
 .vscode/
 __pycache__
 clear_gpu_memory.sh
-.data
+data
